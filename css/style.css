@@ -1,0 +1,213 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: Helvetica, sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  min-height: 100vh;
+  min-width: 100%;
+  padding: 2rem;
+  background-image: -webkit-gradient(linear, left bottom, right top, from(#6c34a8), color-stop(#6548b3), color-stop(#6059bb), color-stop(#5e69c1), color-stop(#5f77c5), color-stop(#5f77bf), color-stop(#5f77b8), color-stop(#5f77b2), color-stop(#5969a1), color-stop(#525c91), color-stop(#4b4f81), to(#444371));
+  background-image: linear-gradient(to right top, #6c34a8, #6548b3, #6059bb, #5e69c1, #5f77c5, #5f77bf, #5f77b8, #5f77b2, #5969a1, #525c91, #4b4f81, #444371);
+  color: #fff;
+}
+
+h1 {
+  font-size: 5rem;
+  margin: 3rem;
+  text-align: center;
+}
+
+.gallery {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  padding: 4rem;
+  border-radius: 1.6rem;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  background: rgba(255, 255, 255, 0.19);
+  -webkit-backdrop-filter: blur(5.7px);
+          backdrop-filter: blur(5.7px);
+  -webkit-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  list-style-type: none;
+}
+
+.thumbnail {
+  max-height: 20rem;
+  max-width: 30rem;
+  margin: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 1.6rem;
+  -webkit-box-shadow: 0 0 50px 5px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0 50px 5px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  cursor: -webkit-zoom-in;
+  cursor: zoom-in;
+  -webkit-transition: scale 0.3s;
+  transition: scale 0.3s;
+}
+
+.thumbnail:hover {
+  scale: 1.1;
+}
+
+.thumbnail input {
+  display: block;
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  aspect-ratio: 16/9;
+}
+
+.thumbnail input:focus {
+  outline: none;
+}
+
+.thumbnail input:focus-visible {
+  border: 2px solid red;
+  border-radius: 1.6rem;
+}
+
+.modal {
+  height: 50%;
+  width: 80%;
+  border: 2px solid rgba(0, 0, 0, 0.5);
+  border-radius: 1.6rem;
+  overflow: hidden;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  -webkit-animation: fadeIn 0.3s both;
+          animation: fadeIn 0.3s both;
+}
+.modal__close {
+  position: absolute;
+  margin: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 1.6rem;
+  background-color: transparent;
+  color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  -webkit-transition: border 0.3s, color 0.3s;
+  transition: border 0.3s, color 0.3s;
+  font-size: 2rem;
+  top: 0;
+  right: 0;
+  padding: 0.5rem 1.3rem;
+}
+.modal__close:hover {
+  border: 1px solid rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
+}
+.modal__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.modal__arrow-left, .modal__arrow-right {
+  position: absolute;
+  margin: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 1.6rem;
+  background-color: transparent;
+  color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  -webkit-transition: border 0.3s, color 0.3s;
+  transition: border 0.3s, color 0.3s;
+  font-size: 4rem;
+  top: 50%;
+  padding: 0rem 0.5rem 0.1rem;
+  translate: 0 -50%;
+  rotate: 180deg;
+  line-height: 5rem;
+}
+.modal__arrow-left:hover, .modal__arrow-right:hover {
+  border: 1px solid rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
+}
+.modal__arrow-right {
+  right: 0;
+  -webkit-transform: scale(-1, 1);
+          transform: scale(-1, 1);
+}
+
+.modal::-webkit-backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+}
+
+.modal::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+}
+
+.overflow {
+  overflow: hidden;
+}
+
+.fade-out {
+  -webkit-animation: fadeOut 0.3s;
+          animation: fadeOut 0.3s;
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}/*# sourceMappingURL=style.css.map */

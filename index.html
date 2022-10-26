@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Lightbox Vanilla JS</title>
+	<link rel="stylesheet" href="./css/style.css" />
+</head>
+
+<body>
+	<h1>Space gallery</h1>
+	<ul class="gallery">
+		<li class="thumbnail"><input type="image" src="./images/1.jpg" alt="" tab></li>
+		<li class="thumbnail"><input type="image" src="./images/2.jpg" alt=""></li>
+		<li class="thumbnail"><input type="image" src="./images/3.jpg" alt=""></li>
+		<li class="thumbnail"><input type="image" src="./images/4.jpg" alt=""></li>
+		<li class="thumbnail"><input type="image" src="./images/5.jpg" alt=""></li>
+	</ul>
+
+	<dialog class="modal">
+		<button class="modal__close" aria-label="Close gallery">X</button>
+		<img src="" alt="" class="modal__img">
+		<button class="modal__arrow-right" aria-label="Next image">&#10142;</button>
+		<button class="modal__arrow-left" aria-label="Previous image">&#10142;</button>
+	</dialog>
+
+	<script src="./js/main.js"></script>
+</body>
+
+</html>

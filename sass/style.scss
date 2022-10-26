@@ -1,0 +1,177 @@
+@mixin icon {
+	position: absolute;
+	margin: 1rem;
+	border: 1px solid rgba(255, 255, 255, 0.5);
+	border-radius: 1.6rem;
+	background-color: transparent;
+	color: rgba(255, 255, 255, 0.5);
+	cursor: pointer;
+	transition: border 0.3s, color 0.3s;
+
+	&:hover {
+		border: 1px solid rgba(255, 255, 255, 1);
+		color: rgba(255, 255, 255, 1);
+	}
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	font-family: Helvetica, sans-serif;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	min-height: 100vh;
+	min-width: 100%;
+	padding: 2rem;
+	background-image: linear-gradient(
+		to right top,
+		#6c34a8,
+		#6548b3,
+		#6059bb,
+		#5e69c1,
+		#5f77c5,
+		#5f77bf,
+		#5f77b8,
+		#5f77b2,
+		#5969a1,
+		#525c91,
+		#4b4f81,
+		#444371
+	);
+	color: #fff;
+}
+
+h1 {
+	font-size: 5rem;
+	margin: 3rem;
+	text-align: center;
+}
+
+.gallery {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	padding: 4rem;
+	border-radius: 1.6rem;
+	border: 1px solid rgba(255, 255, 255, 0.28);
+	background: rgba(255, 255, 255, 0.19);
+	backdrop-filter: blur(5.7px);
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+	list-style-type: none;
+}
+
+.thumbnail {
+	max-height: 20rem;
+	max-width: 30rem;
+	margin: 2rem;
+	border: 1px solid rgba(255, 255, 255, 0.4);
+	border-radius: 1.6rem;
+	box-shadow: 0 0 50px 5px rgba(0, 0, 0, 0.5);
+	overflow: hidden;
+	cursor: zoom-in;
+	transition: scale 0.3s;
+}
+
+.thumbnail:hover {
+	scale: 1.1;
+}
+
+.thumbnail input {
+	display: block;
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+	aspect-ratio: 16/9;
+}
+
+.thumbnail input:focus {
+	outline: none;
+}
+
+.thumbnail input:focus-visible {
+	border: 2px solid red;
+	border-radius: 1.6rem;
+}
+
+.modal {
+	height: 50%;
+	width: 80%;
+	border: 2px solid rgba(0, 0, 0, 0.5);
+	border-radius: 1.6rem;
+	overflow: hidden;
+	left: 50%;
+	top: 50%;
+	translate: -50% -50%;
+	animation: fadeIn 0.3s both;
+
+	&__close {
+		@include icon;
+		font-size: 2rem;
+		top: 0;
+		right: 0;
+		padding: 0.5rem 1.3rem;
+	}
+
+	&__img {
+		display: block;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	&__arrow-left,
+	&__arrow-right {
+		@include icon;
+		font-size: 4rem;
+		top: 50%;
+		padding: 0rem 0.5rem 0.1rem;
+		translate: 0 -50%;
+		rotate: 180deg;
+		line-height: 5rem;
+	}
+
+	&__arrow-right {
+		right: 0;
+		transform: scale(-1, 1);
+	}
+}
+
+.modal::backdrop {
+	background-color: rgba(0, 0, 0, 0.5);
+	backdrop-filter: blur(5px);
+}
+
+.overflow {
+	overflow: hidden;
+}
+
+.fade-out {
+	animation: fadeOut 0.3s;
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes fadeOut {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+	}
+}
